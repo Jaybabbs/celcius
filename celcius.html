@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Temperature Converter</title>
+  
+</head>
+<body>
+    <div id="converter">
+        <input type="number" id="oC" placeholder="Enter temperature in °C">
+        <button onclick="convert()">Convert °C to °F</button>
+        <div id="display"></div>
+    </div>
+
+    <script>
+        function convert() { 
+            let input = +(document.getElementById('oC').value);
+            let display = document.getElementById('display');
+            display.innerHTML = `${input} °C is ${oF(input)} °F`;
+        }
+
+        function oF(c) {
+            let s = 9 / 5;
+            let of = (c * s) + 32; 
+            return of;
+        }
+    </script>
+</body>
+</html>
